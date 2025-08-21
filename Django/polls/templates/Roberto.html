@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo Practico: HTML+CSS</title> <!-- Cambia el nombre de la pestaña -->
+        <link rel="stylesheet" href="/static/styleRoberto.css"> <!-- Conecta el CSS con el HTML -->
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"> <!-- Conecta con las fuentes proporcionadas por google -->
+        
+    </head>
+    <body>
+        <div class="Roberto"> <!-- Div que contiene mi nombre -->
+            <h1>Roberto Yañez San</h1> <!-- Muestra mi nombre al inicio de la pagina -->
+            <h2 id="Bienvenida"></h2>
+        </div>
+        <div class="imagen_roberto">  <!-- Div que contiene la imagen que me representa  -->
+            <img src="/static/imgRoberto/RobertoTemp.png" alt="Perona random que me representa"> <!-- Muestra la imagen que se verá en la pagina -->
+        </div>
+        <div class="cuadro1"> <!-- Div que contendra informació sobre mí -->
+            <div class="SobreMi">
+                <h2>Sobre mí:</h2> <!-- H2 representa el inicio de las cosas sobre mí -->
+                <ul class="info-lista"> <!-- La lista sin ordenar para organizar cosas sobre mí -->
+                    <li><strong>📚 Estudios:</strong> Actualmente me ecuentro estudiando Ingeniería en Ciberseguridad en INACAP (Santiago Sur)</li>
+                    <li><strong>💼 Trabajo:</strong> Con mi familia tenemos una Pyme de estampados personalizados donde principalemte confeccionamos pecheras con diferentes estilos y las personalizamos a gusto del cliente. </li>
+                    <li><strong>🧶 Pasatiempos:</strong> Me encanta el crochet y las manualidades, he logrado hacer mis propios patrones de Amigurumis y en un futuro espero crear muchos más.</li>
+                    <li><strong>🎶 Gusto Musical:</strong> Desde hace mucho tiempo Hatsune Miku ha estado presente en mi vida como mi principal gusto musical, me llena de alegria escuchar sus canciones. 💙</li>
+                </ul>
+            </div>
+        </div>
+        <div class="Botones"> <!-- Div que contiene los botones -->
+            <button class="botoncancion" onclick="window.open('https://music.youtube.com/watch?v=KlTNKOnfXFk', '_blank')">
+                <strong>Mi Cancion Favorita</strong>
+            </button>
+            <button class="botonPyme" onclick="window.open('https://www.instagram.com/nanysan.cl/?hl=es', '_blank')">
+                <strong>Mi Pyme</strong>
+            </button> <!-- Boton con letras negritas que lleva a la Pyme donde trabajo -->
+        </div>
+        
+    
+
+
+<!-- ---------------- FORMULARIOO -------------------  -->
+    <div class="ContenerdorContacto">
+        <button id="mostrarFormulario" class="btn-contacto">¿Quieres contactarme? Haz click aquí</button>
+        <div id="mensajeExito" class="mensaje-exito-oculto"></div>
+        <div id="formularioContacto" class="formulario-oculto">
+            <h3>Formulario de Contacto</h3>
+            <form id="contactForm">
+                <div class="CampoFormulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="CampoFormulario">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" required>
+                </div>
+                <div class="CampoFormulario">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="CampoFormulario">
+                    <label for="motivo">Motivo de contacto:</label>
+                    <textarea id="motivo" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <script src="/static/scriptRoberto.js"></script>
+    </body>
+    <foot>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="Volver">Volver arriba</button>  <!-- Un boton que lleva al inicio de la pagina con un desplazamiento suave -->
+    </foot>
+</html>
