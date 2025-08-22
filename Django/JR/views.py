@@ -7,7 +7,7 @@ def test(request):
     return render(request, 'hola.html')
 
 def pagina(request):
-    return render(request, 'index.html')
+    return render(request, 'IndexUS.html')
 
 #Vagina del Juan
 def PaginaJuan(request):

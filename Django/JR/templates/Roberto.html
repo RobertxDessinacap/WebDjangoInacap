@@ -6,6 +6,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet"> <!-- Conecta con las fuentes proporcionadas por google -->
         
     </head>
+    {% extends 'layouts/base.html' %}
+    {% block content %}
     <body>
         <div class="Roberto"> <!-- Div que contiene mi nombre -->
             <h1>Roberto Yañez San</h1> <!-- Muestra mi nombre al inicio de la pagina -->
@@ -69,4 +71,5 @@
     <foot>
         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="Volver">Volver arriba</button>  <!-- Un boton que lleva al inicio de la pagina con un desplazamiento suave -->
     </foot>
+{% endblock %}
 </html>
