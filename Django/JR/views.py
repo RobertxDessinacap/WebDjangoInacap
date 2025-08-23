@@ -9,7 +9,7 @@ def test(request):
 def pagina(request):
     return render(request, 'IndexUS.html')
 
-#Vagina del Juan
+#Pagina del Juan
 def PaginaJuan(request):
     return render(request, 'Juan.html')
 
