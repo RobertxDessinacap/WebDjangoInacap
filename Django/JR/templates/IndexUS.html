@@ -15,7 +15,7 @@
         
         <div class="Nosotros">
 
-
+            <!-- parte que contiene a Juan -->
             <div class=" mitad Juan">
                 <div class="Jcont1">
                     <h2>Juan Alejandro Sanhueza Godoy</h2>
@@ -51,8 +51,7 @@
                         <ul>
                             <li>Español (Nativo)</li>
                             <li>Inglés (Intermedio)</li>
-                        </ul>
-            
+                        </ul>            
                     <h2>Licencia de conducir:</h2>
                         <ul>
                             <li>Clase B desde 2022</li>
@@ -61,18 +60,15 @@
                     <button id="botonJextra" class="boton Jextra">Datos extra</button>
                     <div id="extra" class="info-oculta">
                         hola
-
                     </div>
                         
             </div>
                 <div class="Jpfp">
                     <a href="/Juan/"><img src="/static/img/Juan.webp" alt="imagenperrona"></a>
-                </div>
-    
+                </div>    
             </div>
             
-            
-
+            <!-- parte que contiene Roberto -->
             
             <div class="mitad Roberto">
                 <div class="Rcont1">
@@ -82,7 +78,6 @@
                         <li>Nacionalidad: Chileno</li>
                         <li>Estado civil: Soltero</li>
                         <li>Estudiante en Ingeniería en Ciberseguridad </li>
-
                     </ul>
                     <h2>Contacto:</h2>
                         <ul>
@@ -110,12 +105,38 @@
                             <li>Español (Nativo)</li>
                             <li>Inglés (Basico)</li>
                         </ul>
-            </div>
-
+                </div>
                     <div class="Rpfp">
                         <a href="/Roberto"><img src="/static/img/Roberto.png" alt="el wea"></a>
                     </div>
                 
+            </div>
+        </div>
+
+        <!-- parte que contiene Formulario de contacto -->
+
+        <div class="ContenerdorContacto">
+            <div class="formulario">
+                <h3>Formulario de Contacto</h3>
+                <form id="contactForm">
+                    <div class="CampoFormulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="CampoFormulario">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" required>
+                    </div>
+                    <div class="CampoFormulario">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="CampoFormulario">
+                        <label for="motivo">Motivo de contacto:</label>
+                        <textarea id="motivo" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">ENVIAR</button>
+                </form>
             </div>
         </div>
         
