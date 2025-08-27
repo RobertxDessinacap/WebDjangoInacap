@@ -1,5 +1,28 @@
-nav{ 
-    background-color:rosybrown;
-    width: 360px;
-    border-radius: 30%;
+nav {
+    background-image: url('img/cherry.webp');
+    background-size: cover;
+    padding: 20px;
+    width: fit-content;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
 }
