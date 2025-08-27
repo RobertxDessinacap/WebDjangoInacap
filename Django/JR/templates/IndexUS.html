@@ -9,7 +9,7 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
 <body>
-    <script src="/Django/JR/static/scriptNosotros.js"> </script>
+    <script src="/static/scriptNosotros.js"> </script>
     <img>
         <h1>JUAN SANHUEZA Y ROBERTO YÁÑEZ</h1>
         
@@ -118,7 +118,8 @@
         <div class="ContenerdorContacto">
             <div class="formulario">
                 <h3>Formulario de Contacto</h3>
-                <form id="contactForm">
+                <form id="contactForm" method="POST">
+                    {% csrf_token %}
                     <div class="CampoFormulario">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" required>
