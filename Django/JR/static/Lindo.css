@@ -98,6 +98,16 @@ h1{
   height: auto;
 }
 
+.Jimagen-fondo :hover{
+  transform: rotate(360deg);
+  transition: 0.7s ease;
+}
+.Rimagen-fondo :hover{
+  transform: rotate(360deg);
+  transition: 0.7s ease;
+}
+
+
 .Rcont1 {
   color: antiquewhite;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);

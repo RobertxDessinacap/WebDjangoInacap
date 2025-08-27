@@ -121,24 +121,24 @@
 
         <div class="ContenerdorContacto">
             <div class="formulario">
-                <h3>Formulario de Contacto</h3>
+                <h2>¡Contactanos!</h2>
                 <form id="contactForm" method="POST">
                     {% csrf_token %}
                     <div class="CampoFormulario">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
                     <div class="CampoFormulario">
                         <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" required>
+                        <input type="text" id="apellido" name="apellido" required>
                     </div>
                     <div class="CampoFormulario">
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="CampoFormulario">
                         <label for="motivo">Motivo de contacto:</label>
-                        <textarea id="motivo" rows="4" required></textarea>
+                        <textarea id="motivo" rows="4" name="motivo" required></textarea>
                     </div>
                     <button type="submit" class="btn-enviar">ENVIAR</button>
                 </form>
