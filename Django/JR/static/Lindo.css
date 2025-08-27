@@ -109,14 +109,67 @@ h1{
 }
 
 .ContenerdorContacto {
-  color: white;;
-  border-radius: 10%;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  align-items: center;
-  background-color: rgb(226, 111, 111);
-  width: fit-content;
-  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.85); /* rojo suave con transparencia */
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(31, 16, 16, 0.4);
+  border: 15px solid transparent;
+  border-image: url('img/wood_wall.webp') 30 round; /* textura estilo bloque */
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
+.formulario h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.CampoFormulario {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.CampoFormulario label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+.btn-enviar {
+  background-image: url('img/ancient_debris.png'); /* textura tipo piedra o madera */
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+  transform: scale(1.05);
+}
+.ContenerdorContacto {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
