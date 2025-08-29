@@ -31,19 +31,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.getElementById('contactForm');
     const mensajeExito = document.getElementById('mensajeExito');
     // *************Guardar datos en array*************
-    const contactos = [];
+  //  const contactos = [];
 
-    function guardarContacto(nombre, apellido, email, motivo) {
-        contactos.push({
-            fecha: new Date().toLocaleString(),
-            nombre,
-            apellido,
-            email,
-            motivo
+    //function guardarContacto(nombre, apellido, email, motivo) {
+      //  contactos.push({
+        //    fecha: new Date().toLocaleString(),
+          //  nombre,
+           // apellido,
+           // email,
+           // motivo
             
-        });
-        console.log("Contactos guardados:", contactos); // Para verificación
-    }
+        //});
+       // console.log("Contactos guardados:", contactos); // Para verificación
+   // }
 
 
 
@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     contactForm.addEventListener('submit', function(i) {           // Validación y envío del formulario
-        i.preventDefault();
         
                 // Obtener valores
         const nombre = document.getElementById('nombre').value;

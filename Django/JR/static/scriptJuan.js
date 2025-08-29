@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const mensajeExito = document.getElementById('mensaje-exito');
   const toggleFormCheckbox = document.getElementById('toggle-form');
   const labelToggle = document.querySelector('label[for="toggle-form"]');
-  const mensajesEnviados = [];
+  //const mensajesEnviados = [];
 
   // Estado inicial formulario
   function actualizarVisualFormulario() {
@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   toggleFormCheckbox.addEventListener('change', actualizarVisualFormulario);
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
+  form.addEventListener('submit', function() {
+  
 
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellido = document.getElementById('apellido').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const telefono = document.getElementById('telefono').value;
     const email = document.getElementById('email').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
+    const mensaje = document.getElementById('mensaje').value;
 
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const telefonoValido = /^(\+?56)?\s?(0?9\d{8}|[2-7]\d{7})$/.test(telefono);
@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Guardar mensaje localmente
-    mensajesEnviados.push({ nombre, apellido, telefono, email, mensaje });
-    console.log("📥 Mensajes enviados:", mensajesEnviados);
+    //mensajesEnviados.push({ nombre, apellido, telefono, email, mensaje });
+    //console.log("📥 Mensajes enviados:", mensajesEnviados);
 
     mensajeError.style.display = 'none';
     mensajeExito.style.display = 'block';
 
-    form.reset();
+    //form.reset();
     toggleFormCheckbox.checked = false;
     actualizarVisualFormulario();
 

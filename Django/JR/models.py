@@ -21,7 +21,7 @@ class RobertoContacto(models.Model):
     motivo = models.TextField()
 
     def __str__(self):
-        return ("contacto"+self.nombre)
+        return ("contacto de "+self.nombre)
     
 
 class JuanContacto(models.Model):
@@ -32,4 +32,4 @@ class JuanContacto(models.Model):
     mensaje = models.TextField()
 
     def __str__(self):
-        return ("contacto"+self.nombre)
+        return ("contacto "+self.nombre)

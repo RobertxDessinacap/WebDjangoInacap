@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Contactos
+from .models import Contactos, RobertoContacto, JuanContacto
 
 
 def test(request):
@@ -18,9 +18,25 @@ def pagina(request):
 
 #Pagina del Juan
 def PaginaJuan(request):
+    if request.method == 'POST':
+        JuanContacto.objects.create(nombre=request.POST['nombre'],
+                                    apellido=request.POST['apellido'],
+                                    telefono=request.POST['telefono'],
+                                    email=request.POST['email'],
+                                    mensaje=request.POST['mensaje'])
+        
     return render(request, 'Juan.html')
 
 #Pagina del Roberto
 def PaginaRoberto(request):
-    return render(request, 'Roberto.html')
+    if request.method == 'POST':
+        RobertoContacto.objects.create(nombre=request.POST['nombreDB'], 
+                                apellido=request.POST['apellidoDB'], 
+                                correo=request.POST['emailDB'], 
+                                motivo=request.POST['motivoDB'])
+        return render(request, 'Roberto.html')
+    else:    
+        return render(request, 'Roberto.html')
+
+    
 
