@@ -1,10 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Contactos, RobertoContacto, JuanContacto
 
 
-def test(request):
-    return render(request, 'hola.html')
 
 def pagina(request):
     if request.method == 'POST':
@@ -12,7 +10,7 @@ def pagina(request):
                                 apellido=request.POST['apellido'], 
                                 email=request.POST['email'], 
                                 motivo=request.POST['motivo'])
-        return render(request, 'IndexUS.html')
+        return redirect('/')
     else:    
         return render(request, 'IndexUS.html')
 
@@ -24,8 +22,9 @@ def PaginaJuan(request):
                                     telefono=request.POST['telefono'],
                                     email=request.POST['email'],
                                     mensaje=request.POST['mensaje'])
-        
-    return render(request, 'Juan.html')
+        redirect('/Juan/')
+    else:
+        return render(request, 'Juan.html')
 
 #Pagina del Roberto
 def PaginaRoberto(request):
@@ -34,7 +33,7 @@ def PaginaRoberto(request):
                                 apellido=request.POST['apellidoDB'], 
                                 correo=request.POST['emailDB'], 
                                 motivo=request.POST['motivoDB'])
-        return render(request, 'Roberto.html')
+        return redirect('/Roberto/')
     else:    
         return render(request, 'Roberto.html')
 
