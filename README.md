@@ -29,9 +29,9 @@ Luego ejecutar
 ```bash
 py manage.py createsuperuser
 ```
->####Credenciales de /admin
->-Juan:asd123
->-Roberto:asd123
+> #### Credenciales de /admin
+> -Juan:asd123
+> -Roberto:asd123
 
 Y para poder ver las paginas ejecutamos en la terminal
 ```bash
