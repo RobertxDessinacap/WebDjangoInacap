@@ -1,7 +1,14 @@
 # WebDjangoInacap
-Actividad en parejas Back-End Roberto Yañez, Juan Sanhueza
+Actividad en parejas Back-End 
+
+Integrantes:Roberto Yañez, Juan Sanhueza
+
 Profesor: Emilio Gonzalo Soto Rojas
+
 Asignatura:2025/P Programación Back End (TI3V41/V-ICS-N4-P2-C1(F)/V Santiago Sur IEC)
+
+---
+
 ## Usando DJANGO 
 
 La pagina consta con 3 paginas, La pagina en común, y 2 paginas personales que reutilizamos en la asignatura de Front-End.
