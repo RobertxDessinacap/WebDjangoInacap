@@ -17,7 +17,7 @@ py manage.py startapp JR
 ```
 Creando así la aplicación.
 
-En JR creamos 2 carpetas,
+En `"JR"` creamos 2 carpetas,
 `"templates"` para colocar ahí los archivos HTML y `"static"` donde se encontraran los archivos CSS y JS, ademas de algunas imagenes que se utilizaran dentro de las paginas.
 
 En este punto, en la terminal ejecutamos el siguiente codigo
