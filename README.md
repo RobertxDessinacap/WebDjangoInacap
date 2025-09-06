@@ -29,9 +29,9 @@ Luego ejecutar
 ```bash
 py manage.py createsuperuser
 ```
->####Credenciales de /admin
->-Juan:asd123
->-Roberto:asd123
+> #### Credenciales de /admin
+> - Juan:asd123
+> - Roberto:asd123
 
 Y para poder ver las paginas ejecutamos en la terminal
 ```bash
@@ -43,4 +43,8 @@ De esta manera completamos el levantamiento del servidor local con Django.
 En este punto comenzamos a trabajar con los archivos de Python (.py)
 Dentro de la carpeta creada al inicio "WebDjango" en el archivo "settings.py" en la lista de "INSTALLED_APPS" agregamos el nombre de la carpeta de la app para que Django la pueda reconocer correctamente.
 
-#POR CONTINUAR
+En la Carpeta de la app "JR" dentro de "view.py"
+Realizamos la logica para mostrar los templates correspondientes, creando una función por cada pagina a mostrar que retornara la función "render" junto con el nombre de los archivos HTML
+luego en la misma carpeta "JR" creamos un archivo "urls.py" en donde importaremos las funciones creadas anteriormente junto con la url a la que corresponde cada pagina ("/","Juan/","/Roberto/")
+estas mismas urls las importaremos en el archivo "urls.py" que se encuentra en la carpeta del proyecto "WebDjango" usando la funcion "include" para que Django no tengan problemas en ejecutarlas.
+
