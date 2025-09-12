@@ -1,5 +1,8 @@
 <h1>LOGIN TEST</h1>
-<form>
+{{ error}}
+<form method="POST">
+    {% csrf_token %}
     {{form.as_p}}
-
+    <button>enviar
+    </button>
 </form>

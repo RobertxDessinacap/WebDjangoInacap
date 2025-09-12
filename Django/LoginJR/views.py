@@ -1,18 +1,67 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.contrib.auth.forms import UserCreationForm
-from hashlib import sha256
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 # Create your views here.
-def LoginJR(request):
-    return render(request, 'login.html')
+
 
 
 def testlogin(request):
-
-    return render(request, 'testlogin.html', {
+    if request.method == 'GET':
+        return render(request, 'testlogin.html', {
         'form': UserCreationForm
-    })
+        })
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+            #crear usuario
+            try:
+                user=User.objects.create_user(
+                    username=request.POST['username'],
+                    password=request.POST['password1']
+                )
+                user.save()
+                login(request, user)
+                return redirect('visual')
+            except:
+                return render(request, 'testlogin.html', {
+                    'form': UserCreationForm,
+                    'error': 'El usuario ya existe'
+                })
+        else:
+            return render(request, 'testlogin.html', {
+                'form': UserCreationForm,
+                'error': 'Las contraseñas no coinciden'
+            })
+    
 
+def hacerlogout(request):
+    logout(request)
+    return render(request, 'login.html')
+
+#Hacer login
+def LoginJR(request):
+    if request.method == 'GET':
+        print("GET")
+        return render(request, 'login.html')
+    else:
+        print(request.POST)
+        user = authenticate(
+            request,
+            username=request.POST['username'],
+            password=request.POST['password']
+        )
+        if user is None:
+            return render(request, 'login.html', {
+                'error': 'El usuario o la contraseña son incorrectos'
+            })
+        else:
+            login(request, user)
+            return redirect('visual')
+
+@login_required
 def mostrardatos(request):
+
     return render(request, 'visualDB.html')

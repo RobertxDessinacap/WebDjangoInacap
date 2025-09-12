@@ -4,6 +4,6 @@ from .views import LoginJR, testlogin, mostrardatos
 
 urlpatterns = [
     path('', LoginJR),
-    path('/test/', testlogin),
-    path('/visual/', mostrardatos)
+    path('/test', testlogin),
+    path('/visual', mostrardatos, name='visual')
 ]
