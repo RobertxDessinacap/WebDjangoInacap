@@ -8,7 +8,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-
+@login_required
 def testlogin(request):
     if request.method == 'GET':
         return render(request, 'testlogin.html', {
@@ -36,10 +36,11 @@ def testlogin(request):
                 'error': 'Las contraseñas no coinciden'
             })
     
-
+#Hacer LOGOUT
 def hacerlogout(request):
     logout(request)
-    return render(request, 'login.html')
+    return redirect('/privado')
+
 
 #Hacer login
 def LoginJR(request):
