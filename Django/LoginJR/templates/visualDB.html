@@ -5,9 +5,21 @@ AQUI SE DEBEN MOSTRAR LAS PERSONAS QUE NOS QUIEREN CONTACTA, DEBEN HABER 3 SECCI
 APARTE, AQUI SE DEBERIA PODER; BORRAR LOS DATOS, EDITAR LOS DATOS, TAL VEZ AGREGAR UNO NUEVO, MOSTRAR
 POR ENDE, SERIAN 3 botones, 2 deben estar en cada dato para borrar(ROJO) y para editar(AMARILLO) y uno general por cada seccion para agregar(VERDE)
 -->
-{% block content %}
-<h1>HOLAA</h1>
 
+{% block content %}
+<link rel="stylesheet" href="/static/MostrarContactos.css"/>
+<h1>Nuestros Contactos</h1>
+<div class="Contenedor_Contactos">
+    <ul>
+        {% for contacto in infocontactos %}
+        <li>
+            <h2>{{contacto.nombre}} {{contacto.apellido}}</h2>
+            <h3>{{contacto.email}}</h3>
+            <p>{{contacto.motivo}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 
 {% endblock %}

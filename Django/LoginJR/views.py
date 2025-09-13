@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-
+from JR.models import Contactos
 # Create your views here.
 
 
@@ -64,5 +64,9 @@ def LoginJR(request):
 
 @login_required
 def mostrardatos(request):
+    contactos = Contactos.objects.all()
 
-    return render(request, 'visualDB.html')
+
+    return render(request, 'visualDB.html', {
+        'infocontactos': contactos
+    })
