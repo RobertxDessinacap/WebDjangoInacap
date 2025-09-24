@@ -1,13 +1,7 @@
 {% extends 'layouts/nav.html' %}
-
 {% block content %}
-<link rel="stylesheet" href="/static/MostrarContactos.css">
+<body><link rel="stylesheet" href="/static/MostrarContactos.css">
 <h1>Nuestros Contactos</h1>
-
-<div class="acciones-generales">
-    <a href="/ruta-para-agregar" class="btn btn-agregar">Agregar Nuevo Contacto</a>
-</div>
-
 <div class="Contenedor_Contactos">
     {% for contacto in infocontactos %}
     <div class="Contacto_Individual">
@@ -25,3 +19,4 @@
 </div>
 
 {% endblock %}
+</body>

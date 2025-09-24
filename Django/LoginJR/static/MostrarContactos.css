@@ -1,5 +1,8 @@
+body {
+    background-image: url("img/fondomadera.jpg");
+}
 h1{
-    color: rgb(47, 86, 168);
+    color: rgb(51, 19, 128);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     text-align: center;
     text-decoration: underline;
@@ -46,18 +49,18 @@ h1{
     margin: 0;
     font-size: 1em;
     color: #444;
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio sobrante */
-    overflow-y: auto; /* Muestra el scroll vertical SÓLO si es necesario */
-    max-height: 150px; /* Limita la altura del párrafo, ajusta según necesites */
-    padding-right: 5px; /* Espacio para el scroll */
+    flex-grow: 1; 
+    overflow-y: auto; 
+    max-height: 150px; 
+    padding-right: 5px; 
 }
 
 /* Contenedor para los botones de editar y borrar */
 .acciones {
     margin-top: 15px;
     display: flex;
-    gap: 10px; /* Espacio entre botones */
-    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 10px; 
+    justify-content: flex-end; 
 }
 
 /* Estilo base para todos los botones */
@@ -72,12 +75,6 @@ h1{
     text-align: center;
 }
 
-/* Colores específicos para cada botón */
-
 .btn-borrar {
-    background-color: #dc3545; /* Rojo */
-}
-
-.acciones-generales {
-    padding: 0 20px;
+    background-color: #dc3545; 
 }
