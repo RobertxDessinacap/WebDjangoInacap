@@ -78,3 +78,19 @@ h1{
 .btn-borrar {
     background-color: #dc3545; 
 }
+
+/* Estilo para el nuevo botón "Destacar"  */
+.btn-destacar {
+    background-color: #007bff; /* Color azul */
+    order: -1; /* Mueve el botón destacar al principio */
+}
+
+.btn-destacar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para la tarjeta cuando está destacada  */
+.Contacto_Individual.destacado {
+    border: 6px solid #ff0000; /* Borde rojo más fuerte */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}   

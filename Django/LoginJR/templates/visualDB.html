@@ -1,10 +1,15 @@
+<head>
+    <title>Co</title>
+<link rel="stylesheet" href="/static/MostrarContactos.css">
+</head>
 {% extends 'layouts/nav.html' %}
 {% block content %}
-<body><link rel="stylesheet" href="/static/MostrarContactos.css">
+<body>
+
 <h1>Nuestros Contactos</h1>
 <div class="Contenedor_Contactos">
     {% for contacto in infocontactos %}
-    <div class="Contacto_Individual">
+    <div class="Contacto_Individual" data-id="{{ contacto.id }}">
         <div class="contenido">
             <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
             <h3>{{ contacto.email }}</h3>
@@ -12,11 +17,49 @@
         </div>
         
         <div class="acciones">
+            <button class="btn btn-destacar">Destacar</button>
             <a href="/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<script>
+    // 1. Definimos el límite máximo de destacados
+    const maxDestacados = 10;
+
+    // 2. Seleccionamos el contenedor y los botones
+    const contenedor = document.querySelector('.Contenedor_Contactos');
+    const botonesDestacar = document.querySelectorAll('.btn-destacar');
+
+    botonesDestacar.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const tarjeta = boton.closest('.Contacto_Individual');
+            const estaDestacado = tarjeta.classList.contains('destacado');
+
+            // 3. Lógica para "des-destacar"
+            // Si la tarjeta ya está destacada, se le quita la clase y termina.
+            if (estaDestacado) {
+                tarjeta.classList.remove('destacado');
+                return; // Detiene la ejecución aquí
+            }
+
+            // 4. Lógica para destacar (si no estaba destacada)
+            // Contamos cuántos elementos ya tienen la clase 'destacado'
+            const destacadosActuales = document.querySelectorAll('.Contacto_Individual.destacado').length;
+
+            // Comprobamos si hemos alcanzado el límite
+            if (destacadosActuales < maxDestacados) {
+                // Si hay espacio, destacamos y movemos la tarjeta
+                tarjeta.classList.add('destacado');
+                contenedor.prepend(tarjeta);
+            } else {
+                // Aviso límite alcanzado
+                alert('Ya alcanzaste el límite de ' + maxDestacados + ' comentarios destacados.');
+            }
+        });
+    });
+</script>
 
 {% endblock %}
 </body>
