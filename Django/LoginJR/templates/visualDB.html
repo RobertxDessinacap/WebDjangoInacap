@@ -1,27 +1,27 @@
 {% extends 'layouts/nav.html' %}
 
-<!-- ESTE ES UN HTML PROTEGIDO, SOLO DEBE VERSE SI SE LOGEAN CORRECTAMENTE
-AQUI SE DEBEN MOSTRAR LAS PERSONAS QUE NOS QUIEREN CONTACTA, DEBEN HABER 3 SECCIONES CON GRID, EN COMUN, JUAN Y ROBERTO.
-APARTE, AQUI SE DEBERIA PODER; BORRAR LOS DATOS, EDITAR LOS DATOS, TAL VEZ AGREGAR UNO NUEVO, MOSTRAR
-POR ENDE, SERIAN 3 botones, 2 deben estar en cada dato para borrar(ROJO) y para editar(AMARILLO) y uno general por cada seccion para agregar(VERDE)
--->
-
 {% block content %}
-<link rel="stylesheet" href="/static/MostrarContactos.css"/>
+<link rel="stylesheet" href="/static/MostrarContactos.css">
 <h1>Nuestros Contactos</h1>
-<div class="Contenedor_Contactos">
-    <ul>
-        {% for contacto in infocontactos %}
-        <div class="Contacto_Individual">
-            <li>
-                <h2>{{contacto.nombre}} {{contacto.apellido}}</h2>
-                <h3>{{contacto.email}}</h3>
-                <p>{{contacto.motivo}}</p>
-            </li>
-        </div>
-        {% endfor %}
-    </ul>
+
+<div class="acciones-generales">
+    <a href="/ruta-para-agregar" class="btn btn-agregar">Agregar Nuevo Contacto</a>
 </div>
 
+<div class="Contenedor_Contactos">
+    {% for contacto in infocontactos %}
+    <div class="Contacto_Individual">
+        <div class="contenido">
+            <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
+            <h3>{{ contacto.email }}</h3>
+            <p>{{ contacto.motivo }}</p>
+        </div>
+        
+        <div class="acciones">
+            <a href="/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
