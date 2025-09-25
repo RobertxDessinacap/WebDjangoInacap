@@ -77,5 +77,18 @@ def mostrardatos(request):
 
 @login_required
 def borrardatos(request, id):
+    contacto = get_object_or_404(Contactos, id=id)
+    contacto.delete()
+    return redirect('visual')
 
+@login_required
+def borrarJuan(request, id):
+    contacto = get_object_or_404(JuanContacto, id=id)
+    contacto.delete()
+    return redirect('visual')
+
+@login_required
+def borrarRoberto(request, id):
+    contacto = get_object_or_404(RobertoContacto, id=id)
+    contacto.delete()
     return redirect('visual')

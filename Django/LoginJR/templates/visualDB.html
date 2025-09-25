@@ -12,7 +12,7 @@
     <div class="Contacto_Individual" data-id="{{ contacto.id }}">
         
         <div class="contenido">
-            <b>Ambos</b>
+            <b>Para Ambos</b>
             <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
             <h3>{{ contacto.email }}</h3>
             <p>{{ contacto.motivo }}</p>
@@ -39,7 +39,7 @@
         
         <div class="acciones">
             <button class="btn btn-destacar">Destacar</button>
-            <a href="/privado/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
+            <a href="{% url 'borrarJuan' contacto.id %}" class="btn btn-borrar">Borrar</a>
         </div>
     </div>
     {% endfor %}
@@ -57,7 +57,7 @@
         
         <div class="acciones">
             <button class="btn btn-destacar">Destacar</button>
-            <a href="/privado/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
+            <a href="{% url 'borrarRoberto' contacto.id %}" class="btn btn-borrar">Borrar</a>
         </div>
     </div>
     {% endfor %}
