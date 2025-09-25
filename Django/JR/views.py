@@ -22,7 +22,7 @@ def PaginaJuan(request):
                                     telefono=request.POST['telefono'],
                                     email=request.POST['email'],
                                     mensaje=request.POST['mensaje'])
-        redirect('/Juan/')
+        return redirect('/Juan/')
     else:
         return render(request, 'Juan.html')
 
@@ -36,6 +36,3 @@ def PaginaRoberto(request):
         return redirect('/Roberto/')
     else:    
         return render(request, 'Roberto.html')
-
-    
-

@@ -1,10 +1,10 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from JR.models import Contactos
+from JR.models import Contactos, JuanContacto, RobertoContacto
 # Create your views here.
 
 
@@ -65,8 +65,17 @@ def LoginJR(request):
 @login_required
 def mostrardatos(request):
     contactos = Contactos.objects.all()
-
+    juanContacto = JuanContacto.objects.all()
+    robertoContacto = RobertoContacto.objects.all()
 
     return render(request, 'visualDB.html', {
-        'infocontactos': contactos
+        'infocontactos': contactos,
+        'JuanContactos': juanContacto,
+        'RobertoContactos': robertoContacto
     })
+
+
+@login_required
+def borrardatos(request, id):
+
+    return redirect('visual')

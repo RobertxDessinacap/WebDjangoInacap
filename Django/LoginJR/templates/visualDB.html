@@ -1,5 +1,5 @@
 <head>
-    <title>Co</title>
+    <title>Contactos</title>
 <link rel="stylesheet" href="/static/MostrarContactos.css">
 </head>
 {% extends 'layouts/nav.html' %}
@@ -10,7 +10,9 @@
 <div class="Contenedor_Contactos">
     {% for contacto in infocontactos %}
     <div class="Contacto_Individual" data-id="{{ contacto.id }}">
+        
         <div class="contenido">
+            <b>Ambos</b>
             <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
             <h3>{{ contacto.email }}</h3>
             <p>{{ contacto.motivo }}</p>
@@ -18,7 +20,44 @@
         
         <div class="acciones">
             <button class="btn btn-destacar">Destacar</button>
-            <a href="/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
+            <a href="{% url 'borrar' contacto.id %}" class="btn btn-borrar">Borrar</a>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+    {% for contacto in JuanContactos %}
+    <div class="Contacto_Individual xd" data-id="{{ contacto.id }}">
+        <div class="contenido">
+            <b>Para Juan</b>
+            <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
+            <h3>{{ contacto.email }}</h3>
+            <p>{{ contacto.mensaje }}</p>
+        </div>
+        
+        <div class="acciones">
+            <button class="btn btn-destacar">Destacar</button>
+            <a href="/privado/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+    {% for contacto in RobertoContactos %}
+    <div class="Contacto_Individual" data-id="{{ contacto.id }}">
+        <div class="contenido">
+            <b>Para Roberto</b>
+            <h2>{{ contacto.nombre }} {{ contacto.apellido }}</h2>
+            <h3>{{ contacto.correo }}</h3>
+            <p>{{ contacto.motivo }}</p>
+        </div>
+        
+        <div class="acciones">
+            <button class="btn btn-destacar">Destacar</button>
+            <a href="/privado/borrar/{{ contacto.id }}" class="btn btn-borrar">Borrar</a>
         </div>
     </div>
     {% endfor %}
