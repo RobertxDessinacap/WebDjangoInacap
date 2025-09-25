@@ -9,9 +9,16 @@
 <body>
     <nav>
         <a href="/privado/salir" class="btn-salir">Salir</a>
+            {% if user.is_authenticated %}
+                {% if user.username == "Juan" %}
+                    <a href="/privado/visual/juan">Contactos Juan</a>
+                {% elif user.username == "Roberto" %}
+                    <a href="/privado/visual/roberto">Contactos Roberto</a>
+                {% endif %}
+            {% endif %}
     </nav>
 
     {% block content %}
     {% endblock %}
 </body>
-</html>
+</html>x|

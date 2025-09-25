@@ -65,7 +65,7 @@
 
 <script>
     // 1. Definimos el límite máximo de destacados
-    const maxDestacados = 10;
+    const maxDestacados = 2;
 
     // 2. Seleccionamos el contenedor y los botones
     const contenedor = document.querySelector('.Contenedor_Contactos');
@@ -94,7 +94,7 @@
                 contenedor.prepend(tarjeta);
             } else {
                 // Aviso límite alcanzado
-                alert('Ya alcanzaste el límite de ' + maxDestacados + ' comentarios destacados.');
+                alert('Ya alcanzaste el límite de ' + maxDestacados + ' contactos destacados.');
             }
         });
     });
