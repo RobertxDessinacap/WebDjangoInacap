@@ -16,3 +16,31 @@
 .btn-salir:hover {
     background-color: #c82333; 
 }
+
+.btn-volver {
+    display: inline-block; 
+    background-color: #3835dc; 
+    color: white;              
+    padding: 10px 20px;       
+    border-radius: 5px;        
+    text-decoration: none;     
+    font-weight: bold;         
+    font-family: sans-serif;   
+    border: none;              
+    cursor: pointer;          
+    transition: background-color 0.3s; 
+}
+
+.btn-seleccionar {
+    display: inline-block; 
+    background-color: #0a7525; 
+    color: white;              
+    padding: 10px 20px;       
+    border-radius: 5px;        
+    text-decoration: none;     
+    font-weight: bold;         
+    font-family: sans-serif;   
+    border: none;              
+    cursor: pointer;          
+    transition: background-color 0.3s; 
+}

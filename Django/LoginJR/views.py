@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from JR.models import Contactos, JuanContacto, RobertoContacto
 # Create your views here.
 
-
+#esto es solo un test para crear usuarios saludos
 @login_required
 def testlogin(request):
     if request.method == 'GET':
@@ -62,6 +62,8 @@ def LoginJR(request):
             login(request, user)
             return redirect('visual')
 
+
+#Mostrar datos de la base de datos de ambos
 @login_required
 def mostrardatos(request):
     contactos = Contactos.objects.all()
@@ -74,21 +76,41 @@ def mostrardatos(request):
         'RobertoContactos': robertoContacto
     })
 
+#Mostrar datos de la base de datos de Juan
+@login_required
+def mostrardatosJuan(request):
+    juanContacto = JuanContacto.objects.all()
+    return render(request, 'visualDB.html', {
+        'JuanContactos': juanContacto
+    })
 
+#Mostrar datos de la base de datos de Roberto
+@login_required
+def mostrardatosRoberto(request):
+    robertoContacto = RobertoContacto.objects.all()
+    return render(request, 'visualDB.html', {
+        'RobertoContactos': robertoContacto
+    }) 
+
+
+#Borrar datos de la base de datos de ambos
 @login_required
 def borrardatos(request, id):
     contacto = get_object_or_404(Contactos, id=id)
     contacto.delete()
     return redirect('visual')
 
+#Borrar datos de la base de datos de Juan
 @login_required
 def borrarJuan(request, id):
     contacto = get_object_or_404(JuanContacto, id=id)
     contacto.delete()
     return redirect('visual')
 
+#Borrar datos de la base de datos de Roberto
 @login_required
 def borrarRoberto(request, id):
     contacto = get_object_or_404(RobertoContacto, id=id)
     contacto.delete()
     return redirect('visual')
+
